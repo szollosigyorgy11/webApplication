@@ -44,11 +44,15 @@ $(".next").click(() => {
     loadPhoto(pageCounter);
 })
 
-let insert =  0;
+let insert =  '';
 for (let i = 0; i < datas.length; i++) {
     insert = insert + '<div class="thumbnail" id="div'+i+'"> <img class="imgs" id="img'+i+'" src="'+datas[i].photo+'"> </div>';
     
 }
-
 $(".menu").html(insert);
 
+$(".thumbnail").css("width","100px");
+$(".thumbnail").css("height","50px");
+$(".thumbnail").css("height","50px");
+$(".imgs").css("width","100%");
+$(".imgs").css("height","100%");
