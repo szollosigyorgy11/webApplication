@@ -46,13 +46,23 @@ $(".next").click(() => {
 
 let insert =  '';
 for (let i = 0; i < datas.length; i++) {
-    insert = insert + '<div class="thumbnail" id="div'+i+'"> <img class="imgs" id="img'+i+'" src="'+datas[i].photo+'"> </div>';
-    
+    insert = insert + '<div class="thumbnail" id="div'+i+'"> <img class="imgs" data-number="'+i+'" src="'+datas[i].photo+'"> </div>';
 }
+
 $(".menu").html(insert);
 
 $(".thumbnail").css("width","100px");
 $(".thumbnail").css("height","50px");
-$(".thumbnail").css("height","50px");
+$(".thumbnail").css("padding","3px");
+$(".thumbnail").css("background","white");
+$(".thumbnail").css("border","3px");
+$(".thumbnail").css("border-radius","3px");
+$(".thumbnail").css("margin","0px 10px");
+
 $(".imgs").css("width","100%");
 $(".imgs").css("height","100%");
+
+$(".imgs").click(() => {
+    pageCounter = $(event.target).attr("data-number");
+    loadPhoto(pageCounter);
+})
