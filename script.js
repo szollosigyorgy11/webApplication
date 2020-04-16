@@ -1,7 +1,7 @@
 let datas = [];
-let images = ["/images/Budapest10.jpg","/images/Finale430.jpg","/images/Lausitzring12.jpg","/images/NBR10.jpg",0,0];
-let titles = ["Budapest","Hochenheim-Final","Lausitzring","Nürburgring"];
-let discriptions = ["This race took place in the amazing Hungaroring, near to Budapest",0,0,0];
+let images = ["/images/Budapest10.jpg","/images/Finale430.jpg","/images/Lausitzring12.jpg","/images/NBR10.jpg",0,0,0,0];
+let titles = ["Budapest","Hochenheim-Final","Lausitzring","Nürburgring","Szeretlek Bébike","","",""];
+let discriptions = ["This race took place in the amazing Hungaroring, near to Budapest",0,0,0,"","","",""];
 let dataLoad = ((number, pic, tit, dis) => {
     let data = {
     id: number,
@@ -40,13 +40,14 @@ $(".thumbnail").hover(function(){$(this).css("margin","0px")},function(){$(this)
 $(".imgs").css("width","100%");
 $(".imgs").css("height","100%");
 $(".imgs").css("object-fit","cover");
+$(".imgs").css("border-radius","3px");
 
 let loadPhoto = (photoNumber) => {
     $("#photo").attr('src', datas[photoNumber].photo);
     $("#photo-title").text(datas[photoNumber].title);
     $("#photo-description").text(datas[photoNumber].discription);
     $(".thumbnail").css("box-shadow","none");
-    $("#div"+photoNumber).css("box-shadow","0px 5px 10px gray");
+    $("#div"+photoNumber).css("box-shadow","0px 10px 10px gray");
 }
 
 loadPhoto(pageCounter);
